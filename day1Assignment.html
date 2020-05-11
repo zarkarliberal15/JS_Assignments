@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 1 Assignment</title>
+    </head>
+    <body>
+        <h1 id="result">Hello</h1>
+        
+        <h1 id="myName" style="color: red;"></h1>
+
+        <button type="button" onclick='displayName("Liberal Zarkar")'>Click Here</button>
+
+        <h1 id="h1Name"></h1>
+        <h2 id="h2Name"></h2>
+        <h3 id="h3Name"></h3>
+        <h4 id="h4Name"></h4>
+        <h5 id="h5Name"></h5>
+
+    <script>
+        // Write a function whose job is to take 3 parameters and return the highest number
+        function highestNumber(a,b,c)
+        {
+
+        if(a>b && a>c)
+        {
+            return a;
+        }
+        else if(b>c)
+        {
+            return b;
+        }
+        else
+        {
+            return c;
+        }
+    }
+        document.getElementById("result").innerHTML ="Highest Number is"+" "+ highestNumber(3,1,2);
+
+        // On button click, display your name in browser, console and alert
+        function displayName(name)
+        {
+            document.getElementById("myName").innerHTML = name;
+            console.log(name);
+            alert(name);
+        }
+
+       // Print your name 5 times using h1 to h5 tag dynamically at run time
+        function nameInAllHeader(name)
+        {
+            document.getElementById("h1Name").innerHTML = name;
+            document.getElementById("h2Name").innerHTML = name;
+            document.getElementById("h3Name").innerHTML = name;
+            document.getElementById("h4Name").innerHTML = name;
+            document.getElementById("h5Name").innerHTML = name;
+        }
+        
+        nameInAllHeader("Liberal Zarkar");
+    </script>
+    </body>
+</html>
