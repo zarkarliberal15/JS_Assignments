@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 2 Assignment</title>
+        
+    </head>
+    <body>
+        <h1>Create an array having 10 numbers , write a function whose  job is to return max number from the array</h1>
+        <p id ="arr1"></p>
+        <button onclick="high()">highest number in array</button>
+        <p id="maxArr"></p>
+        <hr/>
+        <h1>On button click print your name in P tag</h1>
+        <button onclick="myName()">click here</button>
+        <p id="name"></p>
+        <hr/>
+        <h1> Write your name on page but keep it hidden. On button click it should unhide your name</h1>
+        <p id='hideName' style="display:none">Liberal</p>
+        <button onclick="myHiddenName()" >click here</button>
+        
+        <hr/>
+        <h1> Write your name with font size 4. On button click change it to 7</h1>
+        <p id='size' style="size: 4;">Liberal</p>
+        <button onclick="changeSize()" >click here</button>
+        <hr/>
+        <h1>On button click, display current date time in browser.</h1>
+        <p id="date"></p>
+        <button onclick="displayDate()" >click here</button>
+        <hr/>
+
+
+        <h1>Create two text boxes and a button , on button click it should copy data from one text box to another</h1>
+        <form>
+            <input id="t1" placeholder="enter any word"><br/>
+            <input id="t2" readonly><br/>
+            <button onclick="copy()">copy</button>
+
+        </form>
+        <p id='tp'></p>
+
+        <hr/>
+        <h1>Create an array having 10 numbers and display it in ascending order</h1>
+        <p id="arrS"></p>
+        <button onclick="sortArr()">sort</button>
+        <hr/>
+        <h1>Create an array having 5 names and display it in descending order</h1>
+        <p id ='a1'></p>
+        <button onclick="desc()">sort in descending order</button>
+        <p id = 'a2'></p>
+
+        <hr/>
+
+        <h1>Declare a string   having an email Id and check if @ is there in the string or not</h1>
+        <p id = 's1'></p>
+        <button onclick="check()">check</button>
+        <p id = 'v1'></p>
+        <hr/>
+
+    <h1>Declare a string having a 10 digit mobile number. Wwrite a function whose  job is to check if it has 10 digits or not</h1>
+    <p id = 'm1'></p>
+    <button onclick="checkm()">check</button>
+    <p id = 'm2'></p>
+    <hr/>
+
+<h1>Write a function whose  job is to return a random number</h1>
+<p id='r1'></p>
+<button onclick="give()">random number</button>
+<hr/>
+
+
+
+        <script>
+            //• Create an array having 10 numbers , write a function whose  job is to return max number from the array
+            var arr = [1,6,3,12,4,8,9,4,9,5];
+
+           
+            document.getElementById("arr1").innerHTML = arr;
+
+            function high() {
+                arr.sort(function(a, b)
+                { return b - a   });
+                document.getElementById("maxArr").innerHTML = arr[0];
+                }
+            
+//On button click print your name in P tag
+                function myName()
+                {
+                    document.getElementById("name").innerHTML = "Liberal";
+                }
+//Write your name on page but keep it hidden. On button click it should unhide your name
+                function myHiddenName()
+                {
+                    document.getElementById("hideName").style.display = "block";
+                }
+//   Write your name with font size 4. On button click change it to 7
+                
+                function changeSize()
+                {
+                   var name = "Liberal";
+                    document.getElementById("size").innerHTML = name.fontsize(7);
+                    
+                }
+//On button click, display current date time in browser.
+                function displayDate()
+                {
+                    var d = new Date();
+                    document.getElementById("date").innerHTML = d;
+                }
+//Create two text boxes and a button , on button click it should copy data from one text box to another
+var text = document.getElementById("t1");
+function copy()
+{
+    document.getElementById("t2").value = text.value;
+    
+}
+
+//Create an array having 10 numbers and display it in ascending order
+var myArr = [1, 10, 4, 90, 25, 12];
+document.getElementById("arrS").innerHTML = myArr;  
+
+function sortArr() {
+    myArr.sort(function(a, b){return a - b});
+  document.getElementById("arrS").innerHTML = myArr;
+}
+
+
+//Create an array having 5 names and display it in descending order
+var nameArr = ["Samir","Liberal","Shubham","Tarun","Ashish"];
+document.getElementById("a1").innerHTML = nameArr;
+function desc()
+{
+    document.getElementById("a1").innerHTML =  nameArr.reverse(nameArr.sort());
+}
+
+//Declare a string   having an email Id and check if @ is there in the string or not
+var str = "zarkarliberal15@gmail.com";
+document.getElementById("s1").innerHTML = str;
+function check()
+{
+   if(str.search("@")!=-1)
+   {
+    document.getElementById("v1").innerHTML = "true";
+   } 
+   else
+   {
+    document.getElementById("v1").innerHTML = "false";
+   }
+}
+
+//Declare a string having a 10 digit mobile number. Wwrite a function whose  job is to check if it has 10 digits or not
+var mobileNumber = 9420174649;
+var mstr = mobileNumber.toString();
+
+document.getElementById("m1").innerHTML = mobileNumber;
+function checkm()
+{
+   if(mstr.length==10)
+   {
+    document.getElementById("m2").innerHTML = "valid";
+   }
+   else
+   {
+    document.getElementById("m2").innerHTML = "invalid";
+   }
+}
+
+//Write a function whose  job is to return a random number
+function give()
+{
+    var num = Math.floor(Math.random() * 10)+1;
+    document.getElementById("r1").innerHTML = num;
+}
+
+        </script>
+        
+    </body>
+</html>
