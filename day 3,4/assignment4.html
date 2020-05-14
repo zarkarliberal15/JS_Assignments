@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assignment 4</title>
+
+    </head>
+    <body>
+        <h1>Create class Account having instance member name , balance . It has method deposit whose job is to increase balance.
+             Create a child class current account inheriting from Account class. 
+             It has method withdraw whose job is to  reduce the balance.
+              Create two objects of current account and call deposit and withdraw method. 
+              Child class has show method whose job is to display name and new balance.</h1>
+        
+        <script>
+
+               class Account{
+                   constructor(n,b)
+                   {
+                       this.name = n;
+                       this.balance = b;
+                   }
+    
+              deposite(amt)
+              {
+                  this.balance+=amt;
+              }
+            }
+
+            class account extends Account{
+
+                constructor(nm,bl)
+                {
+                    super(nm,bl);
+                }
+
+                withdraw(amt1)
+                {
+                    this.balance -= amt1;
+                }
+
+                show()
+                {
+                    var str = "name :"+this.name+"<br/> balance :"+this.balance+"<br/><br/>";
+                  document.write(str); 
+                }
+
+            }
+
+            user1 = new account("samir",10000);
+          user2 = new account("liberal",20000);
+          user1.deposite(5000);
+          user2.deposite(10000);
+          user1.withdraw(5000);
+          user2.withdraw(1);
+          user1.show();
+          user2.show();
+
+         
+
+        </script>
+    </body>
+</html>
