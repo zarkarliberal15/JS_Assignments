@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assignment 3</title>
+
+    </head>
+    <body>
+        <h1>Create class math having two static methods, cube and square, whose job is to return the square and cube of a number</h1>
+        <label>Please enter any number:</label><br/>
+        <input id="t1" type="number">
+        <button onclick="myFunction()">Answer</button>
+        <p id="ans1"></p>
+        <p id="ans2"></p>
+
+        <script>
+             
+                class Math{
+                    constructor(n)
+                    {
+                        this.num = n;
+                    }
+
+                    static  square(n1)
+                    {
+                        return n1.num*n1.num;
+                    }
+
+                    static cube(n2)
+                    {
+                        return n2.num*n2.num*n2.num;
+                    }
+
+                }
+                   
+                    function myFunction()
+                { 
+                    var userNum1 = document.getElementById("t1").value;
+                    m1 = new Math(userNum1);
+                    document.getElementById("ans1").innerHTML = "Square of "+userNum1+" is "+Math.square(m1);
+                    document.getElementById("ans2").innerHTML = "Cube of "+userNum1+" is "+Math.cube(m1);
+                }
+                
+
+        </script>
+    </body>
+</html>
