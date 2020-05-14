@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assignment 1</title>
+
+    </head>
+    <body>
+        <h1>Using arrow function, print factorial of a number</h1>
+        <input id="t1" type="number">
+        <p id="ans"></p>
+        <button onclick="myFunction()">find</button>
+        <script>
+            function myFunction()
+            {
+                var num1 = document.getElementById('t1').value;
+
+            var factorial = (num) =>
+            {
+                let fact = 1;
+                if(num==0)
+                {
+                    return fact ;
+                }
+                else if(num==1)
+                {
+                    return fact;
+                }
+                else
+                {
+                    for(let i=2;i<=num;i++)
+                    {
+                        fact *=i;
+                    }
+                    return fact;
+                }
+            }
+
+            document.getElementById("ans").innerHTML = "Factorail of "+num1+" is "+factorial(num1);
+        }
+        </script>
+    </body>
+</html>
