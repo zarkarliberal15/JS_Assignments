@@ -16,8 +16,16 @@
                class Account{
                    constructor(n,b)
                    {
-                       this.name = n;
-                       this.balance = b;
+                    if(typeof(n)=="string" && typeof(b)=="number")
+                {
+                    this.name = n;
+                  this.balance = b;
+                }
+                else{
+                    alert("Please Enter Valid Details");
+                   
+                }
+
                    }
     
               deposite(amt)
