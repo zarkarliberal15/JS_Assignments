@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assignment 2</title>
+
+    </head>
+    <body>
+        <h1>Create class Account having property name, balance. Write method deposit whose job is to increase balance with the amount deposited by user. Create two objects and call deposit method. Write method display which will display name and balance </h1>
+        <header>Account Details:</header><br/>
+        
+        <script>
+
+          class Account
+          {
+              constructor(n,b)
+              {
+                  this.name = n;
+                  this.balance = b;
+              }
+
+              deposite(amt)
+              {
+                  this.balance+=amt;
+              }
+
+              display()
+              {
+                  var str = "name :"+this.name+"<br/> balance :"+this.balance+"<br/><br/>";
+                  document.write(str);  
+              }
+          }
+
+          user1 = new Account("samir",10000);
+          user2 = new Account("liberal",20000);
+          user1.deposite(5000);
+          user2.deposite(10000);
+          user1.display();
+          user2.display();
+
+        </script>
+    </body>
+</html>
