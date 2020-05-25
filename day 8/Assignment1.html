@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+       <!-- • Create class Employee which has instance member id, name , salary, net salary. 
+        Also Write getter setter for each instance member.
+        Write calculate net salary function whose job is to calculate net salary after deduction of 10 % TDS. 
+        Create 2 objects of the class and call method.--> 
+    </head>
+    <body>
+
+        <script>
+            
+            class Employee{
+                constructor(i,n,s)
+                {
+                    if(typeof(i)=="number" && typeof(n)=="string" && typeof(s)=="number")
+                     {
+                         this.id = i;
+                         this.name = n ;
+                         this.salary = s;
+                         this.netSalary = null;
+                    }else{
+                    alert("Please Enter Valid Details");
+                    }
+                }
+
+                //setters
+                set setId(i1)
+                {
+                    if(typeof(i1)=="number")
+                    {
+                        this.id = i1;
+                    }
+                    else
+                    {
+                        alert("please enter valid id");
+                    }
+                    
+                }
+
+                set setName(n1)
+                {
+                    if(typeof(n1)=="string")
+                    {
+                        this.name = n1;
+                    }
+                    else
+                    {
+                        alert("please enter valid name");
+                    }
+                    
+                }
+
+                set setSalary(s1)
+                {
+                    if(typeof(s1)=="number")
+                    {
+                        this.salary = s1;
+                    }
+                    else
+                    {
+                        alert("please enter valid salary");
+                    }
+                    
+                }
+
+                //getters
+                get getId()
+                {
+                    return this.id;
+                }
+
+                get getName()
+                {
+                    return  this.name;
+                }
+
+                get getSalary()
+                {
+                   return this.salary;
+                }
+
+                get getNetSalary()
+                {
+                    return this.netSalary;
+                }
+
+                //method to calculate net salary
+                calculateNetSalary()
+                {
+                    let TDS = 0.1;
+                    this.netSalary = this.salary - (TDS*this.salary);
+                }
+
+                show()
+                {
+                    if(this.netSalary!=null)
+                    {
+                    document.write("-------Employee Details--------<br/>");
+                    document.write("ID: "+this.id);
+                    document.write("<br/>Name: "+this.name);
+                    document.write("<br/>Salary: "+this.salary);
+                    document.write("<br/>Net Salary: "+this.netSalary+"<br/><br/>");
+                    }else{
+                        alert("please calculate net salary of "+this.name);
+                    }
+
+                }
+            }
+
+            e1 = new Employee(1,"samir",9000);
+            e2 = new Employee(2,"Liberal",45000);
+            e1.setSalary = 25000;
+            e1.calculateNetSalary();
+            e1.show();
+            e2.calculateNetSalary();
+            e2.show();
+           
+            
+
+        </script>
+    </body>
+</html>
