@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 6</title>
+        <!-- Create three text boxes and two radio buttons showing value “add” and “subtract”.
+            Let user enter number in two text boxes and as per the selected radio button it should display result in the 3rd text box.
+-->
+       
+    </head>
+    <body > 
+        <label>Number 1</label><br/><input type="number" id="num1"><br/><br/>
+        <label>Number 2</label><br/><input type="number" id="num2"><br/><br/>
+        <label>Answer</label><br/><input id="ans" readonly><br/><br/>
+        <label>Addition</label><input onchange="calculate()" type="radio" name="action" value="add"><br/>
+        <label>Substraction</label><input onchange="calculate()" type="radio" name="action" value="sub">
+        
+        <script>
+        
+
+            function calculate(){
+                var n1 = Number(document.getElementById("num1").value);
+                var n2 = Number(document.getElementById("num2").value);
+                var operation = null;
+                var ele = document.getElementsByName("action");
+
+               for(let i=0;i<ele.length;i++){
+                   if(ele[i].checked){
+                       operation = ele[i].value;
+                   }
+               }
+
+             
+               
+               if(operation=="add"){
+                   document.getElementById("ans").value = n1+n2;
+               }else if(operation=="sub"){
+                document.getElementById("ans").value = n1-n2;
+               }
+            }
+        </script>
+    </body>
+</html>
