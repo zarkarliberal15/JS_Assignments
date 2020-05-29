@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 11</title>
+        <!-- Create three check boxes showing book name and price. 
+            Create a text box. 
+            As per selection of check box , 
+            text box should show total of selected price.-->
+       
+    </head>
+    <body > 
+        <table>
+            <tr>
+                <th>Book Name</th>
+                <th></th>
+                <th>Price</th>
+            </tr>
+        <tr>
+           <td><label>C</label></td> 
+           <td><input type="checkbox" name="books" value="300" onchange="calTotal()"></td> 
+           <td><label>300</label></br></td> 
+            
+        </tr>
+        <tr>
+            <td><label>C++</label></td>
+            <td><input type="checkbox" name="books" value="350" onchange="calTotal()"></td>
+            <td><label>350</label></br></td>
+        </tr>
+        <tr>
+           <td><label>JAVA</label></td> 
+           <td><input type="checkbox" name="books" value="400" onchange="calTotal()"></td> 
+           <td><label>400</label></br></td> 
+        </tr>
+        <tr>
+            <th>Total</th>
+            
+            <th id="t">0</th>
+        </tr>
+    </table>
+        
+        <script>
+            
+           function calTotal()
+           {
+            var sum = 0;
+               var ele = document.getElementsByName("books");
+               
+               for(let i=0; i<ele.length;i++){
+                   if(ele[i].checked)
+                   {
+                    sum += Number(ele[i].value);
+                   }
+                  
+               }
+               document.getElementById("t").innerHTML = sum;
+           }
+        </script>
+    </body>
+</html>
