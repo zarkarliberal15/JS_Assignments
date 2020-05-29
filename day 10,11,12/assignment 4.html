@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 4</title>
+        <!-- Create three radio buttons which show names of colour.
+            Create a text box.
+            Let user enter name in text box and select radio button,
+            on clicking the text in a text box should get respective colour.-->
+       
+    </head>
+    <body > 
+        <input id="myName" onfocus="changeColor()"><br/>
+        <label>red</label>
+        <input type="radio" name="color" value="red"><br/>
+        <label>green</label>
+        <input type="radio" name="color" value="green"><br/>
+        <label>blue</label>
+        <input type="radio" name="color" value="blue"><br/>
+        
+        <script>
+           function changeColor(){
+               
+               var ele = document.getElementsByName("color");
+
+               for(let i=0;i<ele.length;i++){
+                   if(ele[i].checked){
+                       document.getElementById("myName").style.color = ele[i].value;
+                   }
+               }
+           }
+        </script>
+    </body>
+</html>
