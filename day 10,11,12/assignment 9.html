@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 9</title>
+        <!-- Create a textbox ,and a span tag,  
+            on change event on text box it should display data entered in text box in span tag which is next to it text box.
+            .-->
+       
+    </head>
+    <body > 
+        <input id="t" onchange="myFun()">
+        <br/><span id="s"></span>
+        <script>
+           function myFun(){
+               var text = document.getElementById("t").value;
+               document.getElementById("s").innerHTML= text;
+           }
+        </script>
+    </body>
+</html>
