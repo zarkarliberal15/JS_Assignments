@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 11</title>
+        <!-- Create text box and a span tag  ask user to enter password . Rule for password is
+o It must have at least one capital character
+o It must have at least one digit
+o It must have at least 1 special symbol
+On change event it should display appropriate error message
+For example if user enters “Vita” error should be "please use one digit  use one symbol."-->
+       
+    </head>
+    <body > 
+        <input onchange="check(this)"><span style="color: red;" id="warning"></span>
+        <script>
+           function check(id)
+           {
+            var condition1 = false; 
+            var condition2 = false;
+            var condition3 = false;
+            var text = id.value;
+            var warn = "";
+
+
+            //It must have at least one capital character
+            var reg1 = /[A-Z]/g;
+            if(reg1.test(text)){
+                condition1 = true;
+            }else{
+                condition1 = false;
+            }
+
+            //It must have at least one digit
+            var reg2 = /[0-9]/;
+            if(reg2.test(text)){
+                condition2 = true;
+                
+            }else{
+                condition2 = false;
+                
+            }
+
+            //It must have at least 1 special symbol
+
+            var reg3 = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            
+            if(reg3.test(text)){
+                condition3 = true;
+                
+            }else{
+                condition3 = false;
+                
+            }
+
+            if(!condition1){
+                warn += "<br/>It must have at least one capital character<br/>";
+            }
+            if(!condition2){
+                warn += "<br/>It must have at least one digit<br/>";
+            }
+            if(!condition3){
+                warn += "<br/>It must have at least 1 special symbol<br/>";
+            }
+            if(condition1 && condition2 && condition3){
+                warn = "";
+            }
+
+            document.getElementById("warning").innerHTML = warn;
+
+           }
+        </script>
+    </body>
+</html>
