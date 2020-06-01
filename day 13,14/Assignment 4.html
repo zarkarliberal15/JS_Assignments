@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 4</title>
+        <!--Create a text box and two buttons ‘create cookie and read cookie.’ 
+When user enters data in a text box and clicks on button create cookie it should store data in cookie. 
+When user clicks on button read cookie it should display cookie data on the page. -->
+    </head>
+    <body>
+        <input id="t">
+        <button onclick="createMyCookie()">Create Cookie</button>
+        <button onclick="readMyCookie()">Read Cookie</button>
+        <script>
+            function createMyCookie(){
+                var text = document.getElementById("t").value.toString();
+                if(text.length ==0){
+                    alert("Please Enter Data");
+                }else{
+                    document.cookie = text;
+                    alert("Cookie Created Successfully");
+                }
+                
+            }
+            function readMyCookie(){
+                var cookieData = document.cookie.toString();
+                if(cookieData.length==0){
+                    alert("Cookie is empty!");
+                }else{
+                    document.write("Inside Cookie : "+cookieData);
+                }
+
+            }
+        </script>
+    </body>
+</html>
