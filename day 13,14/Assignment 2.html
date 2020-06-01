@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <!--On loading of the page it should display height and width of a screen in h2 tag -->
+    </head>
+    <body onload="info()">
+        <h2 id="wh"></h2>
+        <script>
+            function info(){
+            var width = screen.width;
+            var height = screen.height;
+            document.getElementById("wh").innerHTML = "width = "+width+" height = "+height;
+           }
+        </script>
+    </body>
+</html>
