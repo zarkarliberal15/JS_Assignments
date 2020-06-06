@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <!-- Generate Timer program using JavaScript where Time is decrementing from 5 mins to 0 seconds.
+            As soon as it reaches to zero seconds we should get one alert message with message “Time out!”-->
+            <style>
+                h1{
+                    text-align: center;
+                }
+            </style>
+    </head>
+    <body>
+        <h1>Timer</h1>
+        <h1 id="t">5:00</h1>
+        <script>
+            var time = setInterval(myTimer,1000);
+            var min = 4;
+            var sec = 59;
+            function myTimer(){
+               
+                if(sec==0 && min >=0){
+                    min--;
+                    sec = 59;
+                }
+                else {
+                    sec--;
+                }
+
+                if(min==0 && sec==0){
+                        clearInterval(time);
+                        alert("Time Out");
+                    }
+                document.getElementById("t").innerHTML = min+":"+sec;
+                
+            }
+
+                    
+        </script>
+    </body>
+</html>
