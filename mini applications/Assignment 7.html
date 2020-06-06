@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 7</title>
+   <!-- 
+       With the help of Regular Expressions create application form, which validate inputs like name, age, and phone no., email id. 
+       If user has done any mistake show appropriate message to users
+   -->
+   <style>
+       #nameWarning,#ageWarning,#mobileWarning,#emailWarning{
+           color: red;
+           display: none;
+       }
+   </style>
+    </head>
+    <body>
+        <form onsubmit="return validateForm()">
+            <label>Name:</label><br/>
+            <input id="n" onchange="nameValidation()"><label id="nameWarning"> Please Enter Valid Name</label><br/>
+            <label>Age:</label><br/>
+            <input id="a" onchange="ageValidation()"><label id="ageWarning"> Please Enter Valid Age</label><br/>
+            <label>Mobile Number:</label><br/>
+            <input id="m" onchange="mobileValidation()"><label id="mobileWarning"> Please Enter Valid Mobile Number</label><br/>
+            <label>Email:</label><br/>
+            <input id="e" onchange="emailValidation()"><label id="emailWarning"> Please Enter Valid E-mail Address</label><br/><br/>
+            <input type="submit">
+        </form>
+        <script>
+            var isNameValid = false;
+            var isAgeValid = false;
+            var isMobileValid = false;
+            var isEmailValid = false;
+
+            function nameValidation(){
+                var regForName = /^[A-Za-z]+$/;
+                var name = document.getElementById("n").value.toString();
+                if(name.match(regForName)){
+                    isNameValid = true;
+                    document.getElementById("nameWarning").style.display = "none";
+                }else{
+                    isNameValid = false;
+                    document.getElementById("nameWarning").style.display = "block";
+                }
+            }
+
+
+            function ageValidation(){
+                var regForAge = /^[0-9]+$/;
+                var age = document.getElementById("a").value.toString();
+                if(age.match(regForAge)){
+                    isAgeValid = true;
+                    document.getElementById("ageWarning").style.display = "none";
+                }else{
+                    isAgeValid = false;
+                    document.getElementById("ageWarning").style.display = "block";
+                }
+            }
+
+            function mobileValidation(){
+                var regForMobile = /^[0-9]+$/;
+                var mobile = document.getElementById("m").value.toString();
+                if(mobile.match(regForMobile) && mobile.length == 10 ){
+                    isMobileValid = true;
+                    document.getElementById("mobileWarning").style.display = "none";
+                }else{
+                    isMobileValid = false;
+                    document.getElementById("mobileWarning").style.display = "block";
+                }
+            }
+
+            function emailValidation(){
+                var regForEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var email = document.getElementById("e").value.toString();
+                if(email.match(regForEmail)){
+                    isEmailValid = true;
+                    document.getElementById("emailWarning").style.display = "none";
+                }else{
+                    isEmailValid =false;
+                    document.getElementById("emailWarning").style.display = "block";
+                    
+                }
+
+            }
+
+            
+
+            function validateForm(){
+                if(isNameValid==true && isAgeValid == true && isMobileValid == true && isEmailValid == true){
+                    alert("Form Submitted Successfully");
+                    return true;
+                }else{
+                    alert("Please Enter Required Details");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
